@@ -1,0 +1,28 @@
+.header {
+  height: 6.25rem;
+  background-color: rgb(155, 22, 232);
+  color: white;
+  padding: 0 1.4rem;
+}
+
+.flex_row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.main_nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main_nav li {
+  padding: 0.3rem 0.7rem;
+  font-size: 1.3rem;
+}

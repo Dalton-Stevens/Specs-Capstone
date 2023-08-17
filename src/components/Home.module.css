@@ -1,0 +1,12 @@
+.pokedex_container {
+  height: calc(100vh - 6.25rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokedex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
