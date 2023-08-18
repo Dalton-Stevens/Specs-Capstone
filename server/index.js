@@ -11,6 +11,10 @@ const PORT = process.env.PORT;
 app.use(express.json());
 app.use(cors());
 
+const { refreshData } = require("./controllers/pokedex");
+
+app.get("/refreshData", refreshData);
+
 sequelize
   .sync()
   .then(() => {

@@ -12,6 +12,7 @@ module.exports = {
     sprite: DataTypes.STRING,
     abilityOne: DataTypes.STRING,
     abilityTwo: DataTypes.STRING,
+    abilityThree: DataTypes.STRING,
     hp: DataTypes.INTEGER,
     atk: DataTypes.INTEGER,
     def: DataTypes.INTEGER,
