@@ -1,12 +1,27 @@
 .pokedex_container {
   height: calc(100vh - 6.25rem);
+  width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
 }
 
-.pokedex {
+.select_container {
+  width: 100%;
   display: flex;
-  justify-content: center;
+}
+
+.poke_container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
   align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.poke_img {
+  height: 300px;
+  width: 300px;
 }

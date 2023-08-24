@@ -6,7 +6,7 @@ import classes from "./Home.module.css";
 const Home = () => {
   return (
     <div className={classes.pokedex_container}>
-      <NavLink to="/pokedex">
+      <NavLink to="/auth">
         <img
           src={closed_pokedex}
           alt="closed-pokedex"
