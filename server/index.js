@@ -24,6 +24,8 @@ Team.belongsTo(User);
 
 const { register, login } = require("./controllers/auth");
 
+const { createTeam, getTeam, deletePokemon } = require("./controllers/team");
+
 const {
   refreshData,
   getGenOne,
@@ -35,7 +37,10 @@ const {
   getGenSeven,
   getGenEight,
   getGenNine,
+  addPokemon,
 } = require("./controllers/pokedex");
+
+const { isAuthenticated } = require("./middleware/isAuthenticated");
 
 app.get("/refreshData", refreshData);
 
@@ -48,9 +53,14 @@ app.get("/getGenSix", getGenSix);
 app.get("/getGenSeven", getGenSeven);
 app.get("/getGenEight", getGenEight);
 app.get("/getGenNine", getGenNine);
+app.post("/addPokemon", isAuthenticated, addPokemon);
 
 app.post("/register", register);
 app.post("/login", login);
+
+app.get("/getTeam", isAuthenticated, getTeam);
+app.post("/createTeam", isAuthenticated, createTeam);
+app.delete("/deletePokemon/:id", isAuthenticated, deletePokemon);
 
 sequelize
   .sync()

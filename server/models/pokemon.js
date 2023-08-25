@@ -9,7 +9,7 @@ module.exports = {
       primaryKey: true,
     },
     name: DataTypes.STRING,
-    sprite: DataTypes.STRING,
+    image: DataTypes.STRING,
     abilityOne: DataTypes.STRING,
     abilityTwo: DataTypes.STRING,
     abilityThree: DataTypes.STRING,

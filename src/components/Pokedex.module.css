@@ -8,7 +8,9 @@
 
 .select_container {
   width: 100%;
+  height: 2.25rem;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .poke_container {
@@ -21,7 +23,7 @@
   gap: 1rem;
 }
 
-.poke_img {
+/* .poke_img {
   height: 300px;
   width: 300px;
-}
+} */

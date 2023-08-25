@@ -2,6 +2,8 @@ const axios = require("axios");
 const { Sequelize } = require("sequelize");
 
 const { Pokemon } = require("../models/pokemon");
+const { Team } = require("../models/team");
+const { PokemonTeam } = require("../models/pokemonTeam");
 
 async function fetchData(url) {
   try {
@@ -25,7 +27,7 @@ module.exports = {
         await Pokemon.create({
           id: id,
           name: name,
-          sprite: sprites.front_default,
+          image: sprites.other["official-artwork"].front_default,
           abilityOne: abilities[0].ability.name,
           abilityTwo: abilities[1] ? abilities[1].ability.name : "",
           abilityThree: abilities[2] ? abilities[2].ability.name : "",
@@ -179,6 +181,24 @@ module.exports = {
     } catch (error) {
       console.log(error);
       res.sendStatus(400);
+    }
+  },
+  addPokemon: async (req, res) => {
+    try {
+      const { teamId, pokemonId, userId } = req.body;
+      const findTeam = await Team.findAll({
+        where: {
+          userId,
+          id: teamId,
+        },
+      });
+      if (findTeam.length === 0) {
+        throw new Error("Error");
+      }
+      await PokemonTeam.create({ teamId, pokemonId });
+      res.sendStatus(200);
+    } catch (error) {
+      console.error(error);
     }
   },
 };

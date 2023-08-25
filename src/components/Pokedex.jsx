@@ -1,5 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import axios from "axios";
 import SelectBar from "./SelectBar";
+
+import AuthContext from "../store/authContext";
 
 import classes from "./Pokedex.module.css";
 
@@ -12,6 +15,8 @@ const capitalize = (str, separators) => {
 };
 
 const Pokedex = () => {
+  const { state } = useContext(AuthContext);
+  const [userTeam, setUserTeam] = useState(null);
   const [selectedOption1, setSelectedOption1] = useState("");
   const [selectedOption2, setSelectedOption2] = useState("");
   const [selectedOption3, setSelectedOption3] = useState("");
@@ -32,6 +37,43 @@ const Pokedex = () => {
   const [genSeven, setGenSeven] = useState([]);
   const [genEight, setGenEight] = useState([]);
   const [genNine, setGenNine] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:4004/getTeam", {
+        headers: {
+          authorization: state.token,
+        },
+      })
+      .then((res) => {
+        setUserTeam(res.data);
+      })
+      .catch((err) => console.error(err));
+  }, []);
+
+  useEffect(() => {
+    console.log(displayedObject);
+  }, [displayedObject]);
+
+  const clickHandler = () => {
+    axios
+      .post(
+        "http://localhost:4004/addPokemon",
+        {
+          teamId: userTeam.id,
+          pokemonId: displayedObject.id,
+        },
+        {
+          headers: {
+            authorization: state.token,
+          },
+        }
+      )
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
+  };
 
   useEffect(() => {
     async function fetchGenOne() {
@@ -280,8 +322,8 @@ const Pokedex = () => {
             <p>{displayedObject.id}</p>
             <p>{capitalize(displayedObject.name, ["-"])}</p>
             <img
-              src={displayedObject.sprite}
-              alt="sprite"
+              src={displayedObject.image}
+              alt="image"
               className={classes.poke_img}
             />
             {displayedObject.abilityThree ? (
@@ -311,7 +353,7 @@ const Pokedex = () => {
               {displayedObject.def} SpAtk:{displayedObject.spAtk} SpDef:
               {displayedObject.spDef} Speed:{displayedObject.speed}
             </p>
-            <button>Add</button>
+            <button onClick={clickHandler}>Add</button>
           </div>
         )}
       </div>

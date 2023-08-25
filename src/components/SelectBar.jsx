@@ -80,7 +80,7 @@ const SelectBar = React.forwardRef(
           />
 
           <div className={classes.input_arrow_container}>
-            <i className={classes.input_arrow} />
+            <i className={classes.input_arrow} onClick={clearDropdown} />
           </div>
 
           {selectedKey || inputValue ? (
