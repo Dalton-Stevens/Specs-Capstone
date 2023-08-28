@@ -51,9 +51,10 @@ const Pokedex = () => {
       .catch((err) => console.error(err));
   }, []);
 
-  useEffect(() => {
-    console.log(displayedObject);
-  }, [displayedObject]);
+  // useEffect(() => {
+  //   console.log(displayedObject);
+  //   console.log(userTeam);
+  // }, [displayedObject, userTeam]);
 
   const clickHandler = () => {
     axios
@@ -316,44 +317,100 @@ const Pokedex = () => {
           />
         </div>
       </div>
-      <div>
+      <div className={classes.main_poke_container}>
         {displayedObject && (
           <div className={classes.poke_container}>
-            <p>{displayedObject.id}</p>
-            <p>{capitalize(displayedObject.name, ["-"])}</p>
-            <img
-              src={displayedObject.image}
-              alt="image"
-              className={classes.poke_img}
-            />
-            {displayedObject.abilityThree ? (
-              <p>
-                {capitalize(displayedObject.abilityOne, ["-"])}{" "}
-                {capitalize(displayedObject.abilityTwo, ["-"])}{" "}
-                {capitalize(displayedObject.abilityThree, ["-"])}
-              </p>
-            ) : displayedObject.abilityTwo ? (
-              <p>
-                {capitalize(displayedObject.abilityOne, ["-"])}{" "}
-                {capitalize(displayedObject.abilityTwo, ["-"])}
-              </p>
-            ) : (
-              <p>{capitalize(displayedObject.abilityOne, ["-"])}</p>
-            )}
-            {displayedObject.typeTwo ? (
-              <p>
-                {capitalize(displayedObject.typeOne, ["-"])}{" "}
-                {capitalize(displayedObject.typeTwo, ["-"])}
-              </p>
-            ) : (
-              <p>{capitalize(displayedObject.typeOne, ["-"])}</p>
-            )}
-            <p>
-              Hp:{displayedObject.hp} Atk:{displayedObject.atk} Def:
-              {displayedObject.def} SpAtk:{displayedObject.spAtk} SpDef:
-              {displayedObject.spDef} Speed:{displayedObject.speed}
-            </p>
-            <button onClick={clickHandler}>Add</button>
+            <div className={classes.left_container}>
+              <h1 className={classes.poke_id}>{displayedObject.id}</h1>
+              <h1 className={classes.poke_name}>
+                {capitalize(displayedObject.name, ["-"])}
+              </h1>
+              <img
+                src={displayedObject.image}
+                alt="image"
+                className={classes.poke_img}
+              />
+            </div>
+            <div className={classes.right_container}>
+              {displayedObject.typeTwo ? (
+                <ul>
+                  <h1 className={classes.title}>Types</h1>
+                  <div className={classes.twoType_container}>
+                    <li
+                      className={
+                        classes[`type${capitalize(displayedObject.typeOne)}`]
+                      }
+                    >
+                      {capitalize(displayedObject.typeOne, ["-"])}{" "}
+                    </li>
+                    <li
+                      className={
+                        classes[`type${capitalize(displayedObject.typeTwo)}`]
+                      }
+                    >
+                      {capitalize(displayedObject.typeTwo, ["-"])}
+                    </li>
+                  </div>
+                </ul>
+              ) : (
+                <ul>
+                  <h1 className={classes.title}>Type</h1>
+                  <div className={classes.oneType_container}>
+                    <li
+                      className={
+                        classes[`type${capitalize(displayedObject.typeOne)}`]
+                      }
+                    >
+                      {capitalize(displayedObject.typeOne, ["-"])}
+                    </li>
+                  </div>
+                </ul>
+              )}
+              {displayedObject.abilityThree ? (
+                <ul>
+                  <h1 className={classes.title}>Abilities</h1>
+                  <div className={classes.threeAbility_container}>
+                    <li>{capitalize(displayedObject.abilityOne, ["-"])}</li>
+                    <li>{capitalize(displayedObject.abilityTwo, ["-"])}</li>
+                    <li>{capitalize(displayedObject.abilityThree, ["-"])}</li>
+                  </div>
+                </ul>
+              ) : displayedObject.abilityTwo &&
+                displayedObject.abilityTwo !== displayedObject.abilityOne ? (
+                <ul>
+                  <h1 className={classes.title}>Abilities</h1>
+                  <div className={classes.twoAbility_container}>
+                    <li>{capitalize(displayedObject.abilityOne, ["-"])}</li>
+                    <li>{capitalize(displayedObject.abilityTwo, ["-"])}</li>
+                  </div>
+                </ul>
+              ) : (
+                <ul>
+                  <h1 className={classes.title}>Ability</h1>
+                  <div className={classes.oneAbility_container}>
+                    <li>{capitalize(displayedObject.abilityOne, ["-"])}</li>
+                  </div>
+                </ul>
+              )}
+              <ul>
+                <h1 className={classes.title}>Base Stats</h1>
+                <div className={classes.stats_container}>
+                  <li>Hp:{displayedObject.hp}</li>
+                  <li>Atk:{displayedObject.atk}</li>
+                  <li>Def:{displayedObject.def}</li>
+                  <li>SpAtk:{displayedObject.spAtk}</li>
+                  <li>SpDef:{displayedObject.spDef}</li>
+                  <li>Speed:{displayedObject.speed}</li>
+                </div>
+              </ul>
+            </div>
+            {userTeam.pokemons.length < 6 ? (
+              <div className={classes.btn_container}>
+                <button className={classes.add_btn} onClick={clickHandler}>
+                  Add
+                </button>
+              </div>
+            ) : null}
           </div>
         )}
       </div>

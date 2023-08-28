@@ -21,7 +21,12 @@ module.exports = {
         include: [Pokemon],
         where: { userId: userId },
       });
-      res.status(200).send(team);
+      if (!team) {
+        const newTeam = await Team.create({ userId });
+        res.status(200).send(newTeam);
+      } else {
+        res.status(200).send(team);
+      }
     } catch (error) {
       console.log(error);
       res.sendStatus(400);

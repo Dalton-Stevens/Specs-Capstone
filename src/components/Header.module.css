@@ -1,7 +1,6 @@
 .header {
   height: 6.25rem;
-  background-color: rgb(155, 22, 232);
-  color: white;
+  background-color: rgb(191, 2, 2);
   padding: 0 1.4rem;
 }
 
@@ -25,4 +24,16 @@
 .main_nav li {
   padding: 0.3rem 0.7rem;
   font-size: 1.3rem;
+}
+
+.logout_btn {
+  border: none;
+  background-color: rgb(191, 2, 2);
+  color: white;
+  font-size: 1.1rem;
+}
+
+.logout_btn:hover {
+  color: black;
+  cursor: pointer;
 }

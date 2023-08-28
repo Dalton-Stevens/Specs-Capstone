@@ -1,7 +1,7 @@
 :root {
-  --primary-light-hsl: 200, 100%, 91%;
-  --primary-hsl: 200, 100%, 50%;
-  --primary-dark-hsl: 200, 100%, 6%;
+  --primary-light-hsl: 0, 100%, 91%;
+  --primary-hsl: 0, 100%, 50%;
+  --primary-dark-hsl: 0, 100%, 6%;
 }
 
 .full_screen_container {
@@ -70,7 +70,7 @@
 
 .login_button,
 .register_button {
-  padding: 0.5em 1em;
+  padding: 0.5rem 1rem;
   font-size: 1.5em;
   font-weight: lighter;
   color: white;

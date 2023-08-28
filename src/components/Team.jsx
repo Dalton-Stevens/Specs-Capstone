@@ -56,9 +56,9 @@ const Team = () => {
       });
   };
 
-  useEffect(() => {
-    console.log(userTeam);
-  }, [userTeam]);
+  // useEffect(() => {
+  //   console.log(userTeam);
+  // }, [userTeam]);
 
   useEffect(() => {
     if (userTeam?.pokemons.length === 0) {

@@ -1,4 +1,4 @@
-.pokedex_container {
+/* .pokedex_container {
   height: calc(100vh - 6.25rem);
   width: 100%;
   display: flex;
@@ -21,9 +21,335 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
+} */
+
+.pokedex_container {
+  height: calc(100vh - 6.25rem);
+  width: 100%;
+  /* display: flex; */
+  /* flex-wrap: wrap;  */
+  /* justify-content: center; */
 }
 
-/* .poke_img {
-  height: 300px;
-  width: 300px;
-} */
+.select_container {
+  width: 100%;
+  height: 2.25rem;
+  display: flex;
+}
+
+.main_poke_container {
+  height: 90%;
+  width: 100%;
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center;
+  flex-direction: row; */
+}
+
+.poke_container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left_container {
+  height: 80%;
+  /* width: 40%; */
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid white;
+}
+
+.poke_id {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.poke_name {
+  font-size: 3rem;
+  color: white;
+}
+
+.poke_img {
+  height: 500px;
+  width: 500px;
+}
+
+.right_container {
+  height: 80%;
+  /* width: 40%; */
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  border: 1px solid white;
+}
+
+.title {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.twoType_container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.oneType_container {
+  max-height: 33%;
+  display: flex;
+  justify-content: center;
+}
+
+.threeAbility_container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.twoAbility_container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.oneAbility_container {
+  display: flex;
+  justify-content: center;
+}
+
+.stats_container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.btn_container {
+  position: fixed;
+  bottom: 50px;
+}
+
+.add_btn {
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  font-weight: lighter;
+  color: white;
+  background-color: hsl(0, 100%, 50%, 0.25);
+  border: 1px solid hsl(0, 100%, 50%);
+  border-radius: 0.25rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.add_btn:hover,
+.add_btn:focus {
+  background-color: hsl(0, 100%, 50%, 0.4);
+}
+
+.typeNormal {
+  background-color: #a8a77a;
+  height: 4rem;
+  width: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.8rem;
+}
+
+.typeFire {
+  background-color: #ee8130;
+  height: 4rem;
+  width: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.8rem;
+}
+
+.typeWater {
+  background-color: #6390f0;
+  height: 4rem;
+  width: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.8rem;
+}
+
+.typeElectric {
+  background-color: #f7d02c;
+  height: 4rem;
+  width: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.8rem;
+}
+
+.typeGrass {
+  background-color: #7ac74c;
+  height: 4rem;
+  width: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.8rem;
+}
+
+.typeIce {
+  background-color: #96d9d6;
+  height: 4rem;
+  width: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.8rem;
+}
+
+.typeFighting {
+  background-color: #c22e28;
+  height: 4rem;
+  width: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.8rem;
+}
+
+.typePoison {
+  background-color: #a33ea1;
+  height: 4rem;
+  width: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.8rem;
+}
+
+.typeGround {
+  background-color: #e2bf65;
+  height: 4rem;
+  width: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.8rem;
+}
+
+.typeFlying {
+  background-color: #a98ff3;
+  height: 4rem;
+  width: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.8rem;
+}
+
+.typePsychic {
+  background-color: #f95587;
+  height: 4rem;
+  width: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.8rem;
+}
+
+.typeBug {
+  background-color: #a6b91a;
+  height: 4rem;
+  width: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.8rem;
+}
+
+.typeRock {
+  background-color: #b6a136;
+  height: 4rem;
+  width: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.8rem;
+}
+
+.typeGhost {
+  background-color: #735797;
+  height: 4rem;
+  width: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.8rem;
+}
+
+.typeDragon {
+  background-color: #6f35fc;
+  height: 4rem;
+  width: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.8rem;
+}
+
+.typeDark {
+  background-color: #705746;
+  height: 4rem;
+  width: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.8rem;
+}
+
+.typeSteel {
+  background-color: #b7b7ce;
+  height: 4rem;
+  width: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.8rem;
+}
+
+.typeFairy {
+  background-color: #d685ad;
+  height: 4rem;
+  width: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.8rem;
+}

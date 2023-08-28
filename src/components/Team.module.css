@@ -1,5 +1,6 @@
 .page_container {
   height: calc(100vh - 6.25rem);
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,14 +12,26 @@
 }
 
 .team_container {
+  height: 100%;
+  width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  border: 1px solid white;
+  gap: 20px;
 }
 
 .img_container {
-  height: 500px;
-  width: 500px;
+  /* height: 25rem;
+  width: 25rem; */
+  height: 46%;
+  width: 27%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
 }
 
 .poke_image {
@@ -27,6 +40,15 @@
 }
 
 .delete_btn {
+  position: absolute;
   height: 25px;
   width: 25px;
+  color: white;
+  top: 15px;
+  right: 15px;
+}
+
+.delete_btn:hover {
+  color: red;
+  cursor: pointer;
 }

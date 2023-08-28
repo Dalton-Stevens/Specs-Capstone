@@ -9,7 +9,7 @@ const Header = () => {
 
   const styleActiveLink = ({ isActive }) => {
     return {
-      color: isActive ? "red" : "",
+      color: isActive ? "blue" : "",
     };
   };
 
@@ -36,7 +36,10 @@ const Header = () => {
               </NavLink>
             </li>
             <li>
-              <button onClick={() => dispatch({ type: "LOGOUT" })}>
+              <button
+                className={classes.logout_btn}
+                onClick={() => dispatch({ type: "LOGOUT" })}
+              >
                 Logout
               </button>
             </li>
