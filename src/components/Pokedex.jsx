@@ -1,6 +1,14 @@
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import SelectBar from "./SelectBar";
+
+import hpIcon from "../assets/hpIcon.png";
+import atkIcon from "../assets/atkIcon.png";
+import defIcon from "../assets/defIcon.png";
+import spAtkIcon from "../assets/spAtkIcon.png";
+import spDefIcon from "../assets/spDefIcon.png";
+import speedIcon from "../assets/speedIcon.png";
 
 import AuthContext from "../store/authContext";
 
@@ -16,6 +24,7 @@ const capitalize = (str, separators) => {
 
 const Pokedex = () => {
   const { state } = useContext(AuthContext);
+  const navigate = useNavigate();
   const [userTeam, setUserTeam] = useState(null);
   const [selectedOption1, setSelectedOption1] = useState("");
   const [selectedOption2, setSelectedOption2] = useState("");
@@ -72,6 +81,7 @@ const Pokedex = () => {
       )
       .then((res) => {
         console.log(res);
+        navigate("/team");
       })
       .catch((err) => console.log(err));
   };
@@ -370,9 +380,15 @@ const Pokedex = () => {
                 <ul>
                   <h1 className={classes.title}>Abilities</h1>
                   <div className={classes.threeAbility_container}>
-                    <li>{capitalize(displayedObject.abilityOne, ["-"])}</li>
-                    <li>{capitalize(displayedObject.abilityTwo, ["-"])}</li>
-                    <li>{capitalize(displayedObject.abilityThree, ["-"])}</li>
+                    <li className={classes.abilityBox}>
+                      {capitalize(displayedObject.abilityOne, ["-"])}
+                    </li>
+                    <li className={classes.abilityBox}>
+                      {capitalize(displayedObject.abilityTwo, ["-"])}
+                    </li>
+                    <li className={classes.abilityBox}>
+                      {capitalize(displayedObject.abilityThree, ["-"])}
+                    </li>
                   </div>
                 </ul>
               ) : displayedObject.abilityTwo &&
@@ -380,27 +396,75 @@ const Pokedex = () => {
                 <ul>
                   <h1 className={classes.title}>Abilities</h1>
                   <div className={classes.twoAbility_container}>
-                    <li>{capitalize(displayedObject.abilityOne, ["-"])}</li>
-                    <li>{capitalize(displayedObject.abilityTwo, ["-"])}</li>
+                    <li className={classes.abilityBox}>
+                      {capitalize(displayedObject.abilityOne, ["-"])}
+                    </li>
+                    <li className={classes.abilityBox}>
+                      {capitalize(displayedObject.abilityTwo, ["-"])}
+                    </li>
                   </div>
                 </ul>
               ) : (
                 <ul>
                   <h1 className={classes.title}>Ability</h1>
                   <div className={classes.oneAbility_container}>
-                    <li>{capitalize(displayedObject.abilityOne, ["-"])}</li>
+                    <li className={classes.abilityBox}>
+                      {capitalize(displayedObject.abilityOne, ["-"])}
+                    </li>
                   </div>
                 </ul>
               )}
               <ul>
                 <h1 className={classes.title}>Base Stats</h1>
                 <div className={classes.stats_container}>
-                  <li>Hp:{displayedObject.hp}</li>
-                  <li>Atk:{displayedObject.atk}</li>
-                  <li>Def:{displayedObject.def}</li>
-                  <li>SpAtk:{displayedObject.spAtk}</li>
-                  <li>SpDef:{displayedObject.spDef}</li>
-                  <li>Speed:{displayedObject.speed}</li>
+                  <li className={classes.statBox}>
+                    <img
+                      src={hpIcon}
+                      alt="hpIcon"
+                      className={classes.hp_icon}
+                    />
+                    {displayedObject.hp}
+                  </li>
+                  <li className={classes.statBox}>
+                    <img
+                      src={atkIcon}
+                      alt="atkIcon"
+                      className={classes.atk_icon}
+                    />
+                    {displayedObject.atk}
+                  </li>
+                  <li className={classes.statBox}>
+                    <img
+                      src={defIcon}
+                      alt="defIcon"
+                      className={classes.def_icon}
+                    />
+                    {displayedObject.def}
+                  </li>
+                  <li className={classes.statBox}>
+                    <img
+                      src={spAtkIcon}
+                      alt="spAtkIcon"
+                      className={classes.sp_atk_icon}
+                    />
+                    {displayedObject.spAtk}
+                  </li>
+                  <li className={classes.statBox}>
+                    <img
+                      src={spDefIcon}
+                      alt="spDefIcon"
+                      className={classes.sp_def_icon}
+                    />
+                    {displayedObject.spDef}
+                  </li>
+                  <li className={classes.statBox}>
+                    <img
+                      src={speedIcon}
+                      alt="speedIcon"
+                      className={classes.speed_icon}
+                    />
+                    {displayedObject.speed}
+                  </li>
                 </div>
               </ul>
             </div>

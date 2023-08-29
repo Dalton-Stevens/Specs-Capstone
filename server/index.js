@@ -24,7 +24,7 @@ Team.belongsTo(User);
 
 const { register, login } = require("./controllers/auth");
 
-const { createTeam, getTeam, deletePokemon } = require("./controllers/team");
+const { getTeam, deletePokemon } = require("./controllers/team");
 
 const {
   refreshData,
@@ -59,7 +59,7 @@ app.post("/register", register);
 app.post("/login", login);
 
 app.get("/getTeam", isAuthenticated, getTeam);
-app.post("/createTeam", isAuthenticated, createTeam);
+// app.post("/createTeam", isAuthenticated, createTeam);
 app.delete("/deletePokemon/:id", isAuthenticated, deletePokemon);
 
 sequelize

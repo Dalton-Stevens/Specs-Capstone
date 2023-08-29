@@ -6,37 +6,85 @@
   align-items: center;
 }
 
-.team_btn {
+/* .team_btn {
   padding: 8rem 8rem;
   font-size: 3rem;
-}
+} */
 
 .team_container {
   height: 100%;
   width: 80%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  border: 1px solid white;
-  gap: 20px;
-}
-
-.img_container {
-  /* height: 25rem;
-  width: 25rem; */
-  height: 46%;
-  width: 27%;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid white;
+  align-content: center;
+  flex-wrap: wrap;
+  /* border: 1px solid white; */
+  gap: 20px;
+}
+
+.user_title {
+  position: absolute;
+  top: 0;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.poke_container {
+  /* height: 25rem;
+  width: 25rem; */
+  /* height: 46%; */
+  /* width: 27%; */
+  height: 44%;
+  width: 27%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  /* border: 1px solid white; */
 }
 
 .poke_image {
-  height: 100%;
+  height: 50%;
+  width: 50%;
+  /* border: 1px solid white; */
+  /* border-radius: 50%; */
+  /* padding: 10px 10px; */
+}
+
+.poke_image:hover {
+  transform: scale(1.25);
+}
+
+.poke_name {
+  color: white;
+  font-size: 1.8rem;
+  position: absolute;
+  top: 5px;
+}
+
+.twoType_container {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  /* border: 1px solid white; */
+}
+
+.oneType_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  /* border: 1px solid white; */
 }
 
 .delete_btn {
@@ -44,11 +92,227 @@
   height: 25px;
   width: 25px;
   color: white;
-  top: 15px;
-  right: 15px;
+  top: 5px;
+  right: 30px;
 }
 
 .delete_btn:hover {
   color: red;
   cursor: pointer;
+}
+
+.typeNormal {
+  background-color: #a8a77a;
+  height: 3rem;
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  box-shadow: 10px 10px 5px #262c32;
+}
+
+.typeFire {
+  background-color: #ee8130;
+  height: 3rem;
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  box-shadow: 10px 10px 5px #262c32;
+}
+
+.typeWater {
+  background-color: #6390f0;
+  height: 3rem;
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  box-shadow: 10px 10px 5px #262c32;
+}
+
+.typeElectric {
+  background-color: #f7d02c;
+  height: 3rem;
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  box-shadow: 10px 10px 5px #262c32;
+}
+
+.typeGrass {
+  background-color: #7ac74c;
+  height: 3rem;
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  box-shadow: 10px 10px 5px #262c32;
+}
+
+.typeIce {
+  background-color: #96d9d6;
+  height: 3rem;
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  box-shadow: 10px 10px 5px #262c32;
+}
+
+.typeFighting {
+  background-color: #c22e28;
+  height: 3rem;
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  box-shadow: 10px 10px 5px #262c32;
+}
+
+.typePoison {
+  background-color: #a33ea1;
+  height: 3rem;
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  box-shadow: 10px 10px 5px #262c32;
+}
+
+.typeGround {
+  background-color: #e2bf65;
+  height: 3rem;
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  box-shadow: 10px 10px 5px #262c32;
+}
+
+.typeFlying {
+  background-color: #a98ff3;
+  height: 3rem;
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  box-shadow: 10px 10px 5px #262c32;
+}
+
+.typePsychic {
+  background-color: #f95587;
+  height: 3rem;
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  box-shadow: 10px 10px 5px #262c32;
+}
+
+.typeBug {
+  background-color: #a6b91a;
+  height: 3rem;
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  box-shadow: 10px 10px 5px #262c32;
+}
+
+.typeRock {
+  background-color: #b6a136;
+  height: 3rem;
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  box-shadow: 10px 10px 5px #262c32;
+}
+
+.typeGhost {
+  background-color: #735797;
+  height: 3rem;
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  box-shadow: 10px 10px 5px #262c32;
+}
+
+.typeDragon {
+  background-color: #6f35fc;
+  height: 3rem;
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  box-shadow: 10px 10px 5px #262c32;
+}
+
+.typeDark {
+  background-color: #705746;
+  height: 3rem;
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  box-shadow: 10px 10px 5px #262c32;
+}
+
+.typeSteel {
+  background-color: #b7b7ce;
+  height: 3rem;
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  box-shadow: 10px 10px 5px #262c32;
+}
+
+.typeFairy {
+  background-color: #d685ad;
+  height: 3rem;
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  box-shadow: 10px 10px 5px #262c32;
 }

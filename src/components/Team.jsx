@@ -6,27 +6,35 @@ import { TrashIcon } from "@heroicons/react/24/outline";
 import AuthContext from "../store/authContext";
 import classes from "./Team.module.css";
 
+const capitalize = (str, separators) => {
+  separators = separators || [" "];
+  let regex = new RegExp("(^|[" + separators.join("") + "])(\\w)", "g");
+  return str.toLowerCase().replace(regex, function (x) {
+    return x.toUpperCase();
+  });
+};
+
 const Team = () => {
   const [userTeam, setUserTeam] = useState(null);
   const { state } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const handleCreateClick = () => {
-    axios
-      .post(
-        "http://localhost:4004/createTeam",
-        {},
-        {
-          headers: {
-            authorization: state.token,
-          },
-        }
-      )
-      .then(() => {
-        navigate("/pokedex");
-      })
-      .catch((err) => console.error(err));
-  };
+  // const handleCreateClick = () => {
+  //   axios
+  //     .post(
+  //       "http://localhost:4004/createTeam",
+  //       {},
+  //       {
+  //         headers: {
+  //           authorization: state.token,
+  //         },
+  //       }
+  //     )
+  //     .then(() => {
+  //       navigate("/pokedex");
+  //     })
+  //     .catch((err) => console.error(err));
+  // };
 
   useEffect(() => {
     axios
@@ -56,9 +64,9 @@ const Team = () => {
       });
   };
 
-  // useEffect(() => {
-  //   console.log(userTeam);
-  // }, [userTeam]);
+  useEffect(() => {
+    console.log(userTeam);
+  }, [userTeam]);
 
   useEffect(() => {
     if (userTeam?.pokemons.length === 0) {
@@ -68,16 +76,76 @@ const Team = () => {
 
   return (
     <div className={classes.page_container}>
-      {!userTeam && (
+      {/* {!userTeam && (
         <button className={classes.team_btn} onClick={handleCreateClick}>
           Create Team
         </button>
-      )}
+      )} */}
       {userTeam && (
         <div className={classes.team_container}>
+          <h1 className={classes.user_title}>
+            {capitalize(userTeam.user.username, ["-"])}'s Team
+          </h1>
           {userTeam.pokemons.map((poke) => (
-            <div key={poke.id} className={classes.img_container}>
+            <div key={poke.id} className={classes.poke_container}>
+              <h2 className={classes.poke_name}>
+                {capitalize(poke.name, ["-"])}
+              </h2>
               <img src={poke.image} className={classes.poke_image} />
+              {poke.typeTwo ? (
+                <ul>
+                  <div className={classes.twoType_container}>
+                    <li className={classes[`type${capitalize(poke.typeOne)}`]}>
+                      {capitalize(poke.typeOne, ["-"])}{" "}
+                    </li>
+                    <li className={classes[`type${capitalize(poke.typeTwo)}`]}>
+                      {capitalize(poke.typeTwo, ["-"])}
+                    </li>
+                  </div>
+                </ul>
+              ) : (
+                <ul>
+                  <div className={classes.oneType_container}>
+                    <li className={classes[`type${capitalize(poke.typeOne)}`]}>
+                      {capitalize(poke.typeOne, ["-"])}
+                    </li>
+                  </div>
+                </ul>
+              )}
+              {/* {poke.abilityThree ? (
+                <ul>
+                  <div className={classes.threeAbility_container}>
+                    <li className={classes.abilityBox}>
+                      {capitalize(poke.abilityOne, ["-"])}
+                    </li>
+                    <li className={classes.abilityBox}>
+                      {capitalize(poke.abilityTwo, ["-"])}
+                    </li>
+                    <li className={classes.abilityBox}>
+                      {capitalize(poke.abilityThree, ["-"])}
+                    </li>
+                  </div>
+                </ul>
+              ) : poke.abilityTwo && poke.abilityTwo !== poke.abilityOne ? (
+                <ul>
+                  <div className={classes.twoAbility_container}>
+                    <li className={classes.abilityBox}>
+                      {capitalize(poke.abilityOne, ["-"])}
+                    </li>
+                    <li className={classes.abilityBox}>
+                      {capitalize(poke.abilityTwo, ["-"])}
+                    </li>
+                  </div>
+                </ul>
+              ) : (
+                <ul>
+                  <div className={classes.oneAbility_container}>
+                    <li className={classes.abilityBox}>
+                      {capitalize(poke.abilityOne, ["-"])}
+                    </li>
+                  </div>
+                </ul>
+              )} */}
               <TrashIcon
                 className={classes.delete_btn}
                 onClick={() => deletePokemon(poke.pokemonTeam.id)}

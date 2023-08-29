@@ -58,18 +58,18 @@
   height: 80%;
   /* width: 40%; */
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex: 1;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  border: 1px solid white;
+  /* border: 1px solid white; */
 }
 
 .poke_id {
   font-size: 1.5rem;
   color: white;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
 }
 
 .poke_name {
@@ -82,6 +82,10 @@
   width: 500px;
 }
 
+.poke_img:hover {
+  transform: scale(1.25);
+}
+
 .right_container {
   height: 80%;
   /* width: 40%; */
@@ -90,7 +94,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   text-align: center;
-  border: 1px solid white;
+  /* border: 1px solid white; */
 }
 
 .title {
@@ -165,6 +169,7 @@
   align-items: center;
   border-radius: 10px;
   font-size: 1.8rem;
+  box-shadow: 10px 10px 5px #262c32;
 }
 
 .typeFire {
@@ -176,6 +181,7 @@
   align-items: center;
   border-radius: 10px;
   font-size: 1.8rem;
+  box-shadow: 10px 10px 5px #262c32;
 }
 
 .typeWater {
@@ -187,6 +193,7 @@
   align-items: center;
   border-radius: 10px;
   font-size: 1.8rem;
+  box-shadow: 10px 10px 5px #262c32;
 }
 
 .typeElectric {
@@ -198,6 +205,7 @@
   align-items: center;
   border-radius: 10px;
   font-size: 1.8rem;
+  box-shadow: 10px 10px 5px #262c32;
 }
 
 .typeGrass {
@@ -209,6 +217,7 @@
   align-items: center;
   border-radius: 10px;
   font-size: 1.8rem;
+  box-shadow: 10px 10px 5px #262c32;
 }
 
 .typeIce {
@@ -220,6 +229,7 @@
   align-items: center;
   border-radius: 10px;
   font-size: 1.8rem;
+  box-shadow: 10px 10px 5px #262c32;
 }
 
 .typeFighting {
@@ -231,6 +241,7 @@
   align-items: center;
   border-radius: 10px;
   font-size: 1.8rem;
+  box-shadow: 10px 10px 5px #262c32;
 }
 
 .typePoison {
@@ -242,6 +253,7 @@
   align-items: center;
   border-radius: 10px;
   font-size: 1.8rem;
+  box-shadow: 10px 10px 5px #262c32;
 }
 
 .typeGround {
@@ -253,6 +265,7 @@
   align-items: center;
   border-radius: 10px;
   font-size: 1.8rem;
+  box-shadow: 10px 10px 5px #262c32;
 }
 
 .typeFlying {
@@ -264,6 +277,7 @@
   align-items: center;
   border-radius: 10px;
   font-size: 1.8rem;
+  box-shadow: 10px 10px 5px #262c32;
 }
 
 .typePsychic {
@@ -275,6 +289,7 @@
   align-items: center;
   border-radius: 10px;
   font-size: 1.8rem;
+  box-shadow: 10px 10px 5px #262c32;
 }
 
 .typeBug {
@@ -286,6 +301,7 @@
   align-items: center;
   border-radius: 10px;
   font-size: 1.8rem;
+  box-shadow: 10px 10px 5px #262c32;
 }
 
 .typeRock {
@@ -297,6 +313,7 @@
   align-items: center;
   border-radius: 10px;
   font-size: 1.8rem;
+  box-shadow: 10px 10px 5px #262c32;
 }
 
 .typeGhost {
@@ -308,6 +325,7 @@
   align-items: center;
   border-radius: 10px;
   font-size: 1.8rem;
+  box-shadow: 10px 10px 5px #262c32;
 }
 
 .typeDragon {
@@ -319,6 +337,7 @@
   align-items: center;
   border-radius: 10px;
   font-size: 1.8rem;
+  box-shadow: 10px 10px 5px #262c32;
 }
 
 .typeDark {
@@ -330,6 +349,7 @@
   align-items: center;
   border-radius: 10px;
   font-size: 1.8rem;
+  box-shadow: 10px 10px 5px #262c32;
 }
 
 .typeSteel {
@@ -341,6 +361,7 @@
   align-items: center;
   border-radius: 10px;
   font-size: 1.8rem;
+  box-shadow: 10px 10px 5px #262c32;
 }
 
 .typeFairy {
@@ -352,4 +373,62 @@
   align-items: center;
   border-radius: 10px;
   font-size: 1.8rem;
+  box-shadow: 10px 10px 5px #262c32;
+}
+
+.abilityBox {
+  /* background-color: #e8e8e8; */
+  background-color: RGB(252, 251, 244);
+  height: 4rem;
+  width: 11rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.8rem;
+  font-weight: 500;
+  box-shadow: 10px 10px 5px #262c32;
+}
+
+.statBox {
+  background-color: #fae9db;
+  height: 4rem;
+  width: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.8rem;
+  box-shadow: 10px 10px 5px #262c32;
+  gap: 5px;
+}
+
+.hp_icon {
+  height: 3.5rem;
+  width: 3.5rem;
+}
+
+.atk_icon {
+  height: 3.5rem;
+  width: 3.5rem;
+}
+
+.def_icon {
+  height: 3.2rem;
+  width: 3.2rem;
+}
+
+.sp_atk_icon {
+  height: 3rem;
+  width: 3rem;
+}
+
+.sp_def_icon {
+  height: 3rem;
+  width: 3rem;
+}
+
+.speed_icon {
+  height: 3rem;
+  width: 3rem;
 }
