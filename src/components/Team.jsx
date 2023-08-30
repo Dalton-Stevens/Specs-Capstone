@@ -19,23 +19,6 @@ const Team = () => {
   const { state } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  // const handleCreateClick = () => {
-  //   axios
-  //     .post(
-  //       "http://localhost:4004/createTeam",
-  //       {},
-  //       {
-  //         headers: {
-  //           authorization: state.token,
-  //         },
-  //       }
-  //     )
-  //     .then(() => {
-  //       navigate("/pokedex");
-  //     })
-  //     .catch((err) => console.error(err));
-  // };
-
   useEffect(() => {
     axios
       .get("http://localhost:4004/getTeam", {
@@ -64,9 +47,9 @@ const Team = () => {
       });
   };
 
-  useEffect(() => {
-    console.log(userTeam);
-  }, [userTeam]);
+  // useEffect(() => {
+  //   console.log(userTeam);
+  // }, [userTeam]);
 
   useEffect(() => {
     if (userTeam?.pokemons.length === 0) {
@@ -76,11 +59,6 @@ const Team = () => {
 
   return (
     <div className={classes.page_container}>
-      {/* {!userTeam && (
-        <button className={classes.team_btn} onClick={handleCreateClick}>
-          Create Team
-        </button>
-      )} */}
       {userTeam && (
         <div className={classes.team_container}>
           <h1 className={classes.user_title}>
@@ -112,40 +90,6 @@ const Team = () => {
                   </div>
                 </ul>
               )}
-              {/* {poke.abilityThree ? (
-                <ul>
-                  <div className={classes.threeAbility_container}>
-                    <li className={classes.abilityBox}>
-                      {capitalize(poke.abilityOne, ["-"])}
-                    </li>
-                    <li className={classes.abilityBox}>
-                      {capitalize(poke.abilityTwo, ["-"])}
-                    </li>
-                    <li className={classes.abilityBox}>
-                      {capitalize(poke.abilityThree, ["-"])}
-                    </li>
-                  </div>
-                </ul>
-              ) : poke.abilityTwo && poke.abilityTwo !== poke.abilityOne ? (
-                <ul>
-                  <div className={classes.twoAbility_container}>
-                    <li className={classes.abilityBox}>
-                      {capitalize(poke.abilityOne, ["-"])}
-                    </li>
-                    <li className={classes.abilityBox}>
-                      {capitalize(poke.abilityTwo, ["-"])}
-                    </li>
-                  </div>
-                </ul>
-              ) : (
-                <ul>
-                  <div className={classes.oneAbility_container}>
-                    <li className={classes.abilityBox}>
-                      {capitalize(poke.abilityOne, ["-"])}
-                    </li>
-                  </div>
-                </ul>
-              )} */}
               <TrashIcon
                 className={classes.delete_btn}
                 onClick={() => deletePokemon(poke.pokemonTeam.id)}

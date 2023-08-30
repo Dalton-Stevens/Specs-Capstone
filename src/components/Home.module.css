@@ -2,16 +2,11 @@
   height: calc(100vh - 6.25rem);
   width: 100vw;
   display: flex;
-  /* justify-content: center; */
   align-content: center;
   align-items: center;
 }
 
 .pokedex {
-  /* height: 60%; */
   width: 60%;
   margin-left: 23rem;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
 }

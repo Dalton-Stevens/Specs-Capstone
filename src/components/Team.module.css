@@ -6,11 +6,6 @@
   align-items: center;
 }
 
-/* .team_btn {
-  padding: 8rem 8rem;
-  font-size: 3rem;
-} */
-
 .team_container {
   height: 100%;
   width: 80%;
@@ -20,7 +15,6 @@
   align-items: center;
   align-content: center;
   flex-wrap: wrap;
-  /* border: 1px solid white; */
   gap: 20px;
 }
 
@@ -30,13 +24,10 @@
   color: white;
   font-size: 1.5rem;
   font-weight: bold;
+  text-decoration: underline;
 }
 
 .poke_container {
-  /* height: 25rem;
-  width: 25rem; */
-  /* height: 46%; */
-  /* width: 27%; */
   height: 44%;
   width: 27%;
   position: relative;
@@ -44,15 +35,11 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  /* border: 1px solid white; */
 }
 
 .poke_image {
   height: 50%;
   width: 50%;
-  /* border: 1px solid white; */
-  /* border-radius: 50%; */
-  /* padding: 10px 10px; */
 }
 
 .poke_image:hover {
@@ -72,9 +59,8 @@
   justify-content: center;
   gap: 1rem;
   position: absolute;
-  bottom: 5%;
+  bottom: 7%;
   left: 0;
-  /* border: 1px solid white; */
 }
 
 .oneType_container {
@@ -82,9 +68,8 @@
   display: flex;
   justify-content: center;
   position: absolute;
-  bottom: 5%;
+  bottom: 7%;
   left: 0;
-  /* border: 1px solid white; */
 }
 
 .delete_btn {

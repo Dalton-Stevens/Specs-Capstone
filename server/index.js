@@ -59,7 +59,6 @@ app.post("/register", register);
 app.post("/login", login);
 
 app.get("/getTeam", isAuthenticated, getTeam);
-// app.post("/createTeam", isAuthenticated, createTeam);
 app.delete("/deletePokemon/:id", isAuthenticated, deletePokemon);
 
 sequelize

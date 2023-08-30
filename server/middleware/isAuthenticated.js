@@ -14,8 +14,6 @@ module.exports = {
     let token;
 
     try {
-      // token = jwt.verify(headerToken, SECRET);
-
       token = jwt.verify(headerToken, SECRET);
 
       req.body.userId = token.id;

@@ -4,16 +4,6 @@ const { PokemonTeam } = require("../models/pokemonTeam");
 const { Pokemon } = require("../models/pokemon");
 
 module.exports = {
-  // createTeam: async (req, res) => {
-  //   try {
-  //     const { userId } = req.body;
-  //     await Team.create({ userId });
-  //     res.sendStatus(200);
-  //   } catch (error) {
-  //     console.log(error);
-  //     res.sendStatus(400);
-  //   }
-  // },
   getTeam: async (req, res) => {
     try {
       const { userId } = req.body;

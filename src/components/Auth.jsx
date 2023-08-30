@@ -29,7 +29,7 @@ const Auth = () => {
         console.error(err);
       });
 
-    console.log("submitHandler called");
+    // console.log("submitHandler called");
   };
 
   return (
