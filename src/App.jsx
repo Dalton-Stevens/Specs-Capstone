@@ -21,7 +21,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route
           path="/auth"
-          element={!state.token ? <Auth /> : <Navigate to="/team" />}
+          element={!state.token ? <Auth /> : <Navigate to="/pokedex" />}
         />
         <Route
           path="/pokedex"

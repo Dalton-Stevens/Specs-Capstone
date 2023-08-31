@@ -62,7 +62,7 @@ const Team = () => {
       {userTeam && (
         <div className={classes.team_container}>
           <h1 className={classes.user_title}>
-            {capitalize(userTeam.user.username, ["-"])}'s Team
+            {capitalize(userTeam?.user?.username, ["-"])}'s Team
           </h1>
           {userTeam.pokemons.map((poke) => (
             <div key={poke.id} className={classes.poke_container}>
